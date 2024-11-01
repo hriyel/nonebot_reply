@@ -1,14 +1,22 @@
-from nonebot import get_plugin_config
-from nonebot.plugin import PluginMetadata
+from logging import config
+from nonebot import on_command
+from nonebot import on_message
+import random
 
-from .config import Config
+from .config import config
 
-__plugin_meta__ = PluginMetadata(
-    name="nonebot_reply",
-    description="",
-    usage="",
-    config=Config,
-)
+group_whitelist = config.group_whitelist # type: ignore
+reply = on_message(priority=1,block=False,)
 
-config = get_plugin_config(Config)
+text = {} #存储当前消息
+a=0
 
+def reply (a): #判断是否复读
+    a=random.randint(1,6)
+    if a == 1:
+        if group_id in group_whitelist:
+            return True
+        else:
+            return False
+
+@reply.handle()
