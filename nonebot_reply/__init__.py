@@ -1,9 +1,22 @@
 from nonebot.adapters import Event, Message, Bot
 from nonebot import on_message
 import random
+from nonebot.plugin import PluginMetadata
 from nonebot_plugin_session import extract_session, SessionIdType
 
+from .config import Config
 from .config import config
+
+__plugin_meta__ = PluginMetadata(
+    name="随机复读插件",
+    description="简单的随机复读插件",
+    usage="可以随机复读上一条信息(包括图片,表情包)",
+    type="application",
+    homepage="https://github.com/hriyel/nonebot_reply.git",
+    config=Config,
+    supported_adapters={"~onebot.v11"},
+    extra={},
+)
 
 group_whitelist = config.group_whitelist  
 repeat_frequency = config.repeat_frequency
