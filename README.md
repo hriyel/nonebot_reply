@@ -5,7 +5,7 @@
 需求nonebot`2.0`
 ## 安装与使用
 ### pip
-`pip install nonebot-reply==1.1`
+`pip install nonebot-reply`
 ### 使用
 请在*.env.prod*文件中加入以下设置:
 `group_whitelist = ["",""]`群组白名单,请在""中加入想要启用功能的群组.
